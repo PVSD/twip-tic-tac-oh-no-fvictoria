@@ -17,6 +17,8 @@ public class Main {
             }
         }
 
+
+
         System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
         board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
         System.out.println("");
@@ -24,13 +26,49 @@ public class Main {
         row = kbReader.nextInt();
         column = kbReader.nextInt();
 
-        if (board[row][column]=='X' || (board[row][column]=='O'))
+        board[row][column] = P1;
+        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
+                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+
+        System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
+        row = kbReader.nextInt();
+        column = kbReader.nextInt();
+
+        board[row][column] = P2;
+        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
+                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+
+        System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
+        row = kbReader.nextInt();
+        column = kbReader.nextInt();
+
+
+        board[row][column] = P1;
+        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
+                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+
+        System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
+        row = kbReader.nextInt();
+        column = kbReader.nextInt();
+
+        board[row][column] = P2;
+        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
+                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+
+        System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
+        row = kbReader.nextInt();
+        column = kbReader.nextInt();
+
+        board[row][column] = P1;
+        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
+                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+        while(Winner.WinCheckerX(board)==true || Winner.WinCheckerO(board)!=true)
         {
-            System.out.println("Spot is already taken, please choose another");
+            System.out.println("Winner");
+            break;
         }
-        board[row][column] = P1;
-        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
-                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+
+
 
         System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
         row = kbReader.nextInt();
@@ -39,38 +77,10 @@ public class Main {
         board[row][column] = P2;
         System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
                 board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
-
-        System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
-        row = kbReader.nextInt();
-        column = kbReader.nextInt();
-
-        board[row][column] = P1;
-        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
-                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
-
-        System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
-        row = kbReader.nextInt();
-        column = kbReader.nextInt();
-
-        board[row][column] = P2;
-        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
-                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
-
-        System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
-        row = kbReader.nextInt();
-        column = kbReader.nextInt();
-
-        board[row][column] = P1;
-        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
-                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
-
-        System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
-        row = kbReader.nextInt();
-        column = kbReader.nextInt();
-
-        board[row][column] = P2;
-        System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
-                board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+        if(Winner.WinCheckerO(board)==true)
+        {
+            System.out.println("Winner");
+        }
 
 
         System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
@@ -80,7 +90,11 @@ public class Main {
         board[row][column] = P1;
         System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
                 board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+        while(Winner.WinCheckerX(board)==true)
+        {
+            System.out.println("Winner");
 
+        }
         System.out.println("Player "+P2+": Enter a row and a column 0, 1 or 2");
         row = kbReader.nextInt();
         column = kbReader.nextInt();
@@ -88,6 +102,10 @@ public class Main {
         board[row][column] = P2;
         System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
                 board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+        if(Winner.WinCheckerO(board)==true)
+        {
+            System.out.println("Winner");
+        }
 
         System.out.println("Player "+P1+": Enter a row and a column 0, 1 or 2");
         row = kbReader.nextInt();
@@ -96,7 +114,14 @@ public class Main {
         board[row][column] = P1;
         System.out.println(board[0][0]+" | "+board[0][1]+" | "+board[0][2]+"\n"+board[1][0]+" | "+board[1][1]+" | "+board[1][2]+"\n"+
                 board[2][0]+" | "+board[2][1]+" | "+board[2][2]);
+        while(Winner.WinCheckerX(board)==true)
+        {
+            System.out.println("Winner");
+            break;
 
+        }
+        if(Winner.WinCheckerX(board)!=true && Winner.WinCheckerO(board)!= true)
+            System.out.println("Tie");
 
 
 
